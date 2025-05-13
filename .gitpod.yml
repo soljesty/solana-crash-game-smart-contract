@@ -1,0 +1,26 @@
+image:
+  file: .devcontainer/Dockerfile
+
+tasks:
+  - name: Setup Solana and Anchor
+    init: |
+      chmod +x .devcontainer/post-start.sh
+      .devcontainer/post-start.sh
+      echo "Installing dependencies..."
+      yarn install
+      echo "Building Anchor project..."
+      anchor build
+    command: |
+      echo "Setup completed. Running tests..."
+      anchor test
+
+ports:
+  - port: 8899
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - matklad.rust-analyzer
+    - tamasfe.even-better-toml
+    - serayuzgur.crates
+    - evnchn.solana-anchor-helpers 

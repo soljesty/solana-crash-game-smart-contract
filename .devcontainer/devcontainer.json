@@ -1,0 +1,39 @@
+{
+  "name": "Solana Anchor Development",
+  "dockerFile": "Dockerfile",
+  "runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+  "forwardPorts": [8899],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "/bin/bash"
+      }
+    },
+    "rust-analyzer.rustfmt.extraArgs": ["--edition", "2021"],
+    "rust-analyzer.cargo.extraArgs": ["--release"],
+    "editor.formatOnSave": true,
+    "editor.rulers": [100]
+  },
+  "extensions": [
+    "matklad.rust-analyzer",
+    "tamasfe.even-better-toml",
+    "serayuzgur.crates",
+    "solana-labs.solana-vscode-plugin",
+    "evnchn.solana-anchor-helpers"
+  ],
+  "postCreateCommand": "bash -c 'chmod +x /workspace/.devcontainer/post-start.sh && /workspace/.devcontainer/post-start.sh'",
+  "postStartCommand": "bash -c '[[ ! -f ~/.config/solana/id.json ]] && /workspace/.devcontainer/post-start.sh || echo \"Solana environment already configured\"'",
+  "remoteUser": "dev",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "workspaceFolder": "/workspace"
+} 

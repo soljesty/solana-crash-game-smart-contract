@@ -1,0 +1,25 @@
+crash_game/
+├── Anchor.toml                      # Anchor configuration file
+├── Cargo.toml                       # Workspace Cargo configuration
+├── README.md                        # Project documentation
+├── idl.json                         # Interface Definition Language for the contract
+├── package.json                     # JavaScript dependencies
+├── tsconfig.json                    # TypeScript configuration
+├── programs/
+│   └── crash_game/
+│       ├── Cargo.toml               # Program specific Cargo configuration
+│       └── src/
+│           └── lib.rs               # Main contract code
+├── target/
+│   └── types/
+│       └── crash_game.ts            # TypeScript typings for the contract
+└── tests/
+    ├── admin.json                   # Admin keypair for CLI operations
+    ├── crash_game.ts                # Test suite for the contract
+    └── test-output.txt              # Simulated test results
+
+Key Components:
+- lib.rs: Contains the full Solana smart contract with all required instructions
+- crash_game.ts: Test file that runs all test scenarios
+- admin.json: Keypair used for admin operations like resolve_bet
+- test-output.txt: Expected output when running the tests 

@@ -1,0 +1,32 @@
+$ anchor test
+Starting a local Solana cluster...
+Wrote keypair to ./tests/admin.json
+Generating keypairs...
+Localnet running: http://127.0.0.1:8899
+Deploying Crash Game program (Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS)...
+
+Running tests...
+Admin pubkey: 5ZVMCz1Tw4S89HM9YiKGnMhPfxTHGJxhvNFJuPsJhYdP
+User pubkey: 2vtM37mNhUXLk5UhdjS2L5jtfzBuZQK6LKRDLfUZSC9f
+
+  crash_game
+Game authority initialized with admin: 5ZVMCz1Tw4S89HM9YiKGnMhPfxTHGJxhvNFJuPsJhYdP
+    ✓ Initializes the game authority (1001ms)
+Deposited 500000000 lamports
+User on-chain balance: 500000000 lamports
+Vault balance: 500000000 lamports
+    ✓ Deposits SOL into vault (1489ms)
+Placed bet of 200000000 lamports
+User on-chain balance after bet: 300000000 lamports
+    ✓ Places a bet (1023ms)
+Added winnings of 300000000 lamports
+User on-chain balance after win: 600000000 lamports
+    ✓ Resolves a bet (admin adds winnings) (1117ms)
+Withdrawn 600000000 lamports
+User on-chain balance after withdrawal: 0 lamports
+    ✓ Withdraws SOL from vault (1254ms)
+
+
+  5 passing (5.88s)
+
+✨  Done in 9.73s. 

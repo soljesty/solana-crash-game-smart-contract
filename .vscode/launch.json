@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug Rust Program",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=crash_game",
+          "--package=crash_game"
+        ],
+        "filter": {
+          "name": "crash_game",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Anchor Tests",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/node_modules/.bin/ts-mocha",
+      "args": [
+        "-p",
+        "./tsconfig.json",
+        "-t",
+        "1000000",
+        "tests/**/*.ts"
+      ],
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "internalConsoleOptions": "openOnSessionStart",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+} 
