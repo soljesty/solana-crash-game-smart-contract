@@ -6,7 +6,7 @@ This project contains a complete Solana Crash Game smart contract built with Anc
 
 Click the button below to launch this project in Gitpod:
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/YOUR_USERNAME/crash-game)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/rungerunge/solana-crash-game)
 
 *Note: Replace `YOUR_USERNAME` with your actual GitHub username after pushing this to a GitHub repository.*
 
